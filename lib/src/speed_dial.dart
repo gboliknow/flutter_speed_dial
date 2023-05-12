@@ -10,13 +10,13 @@ import 'background_overlay.dart';
 import 'speed_dial_child.dart';
 import 'speed_dial_direction.dart';
 
-typedef AsyncChildrenBuilder = Future<List<SpeedDialChild>> Function(
+typedef AsyncChildrenBuilder = Future<List<Widget>> Function(
     BuildContext context);
 
 /// Builds the Speed Dial
 class SpeedDial extends StatefulWidget {
   /// Children buttons, from the lowest to the highest.
-  final List<SpeedDialChild> children;
+  final List<Widget> children;
 
   /// Used to get the button hidden on scroll. See examples for more info.
   final bool visible;
@@ -526,7 +526,7 @@ class _ChildrensOverlay extends StatelessWidget {
 
   List<Widget> _getChildrenList() {
     return widget.children
-        .map((SpeedDialChild child) {
+        .map((Widget child) {
           int index = widget.children.indexOf(child);
 
           return AnimatedChild(
@@ -551,29 +551,29 @@ class _ChildrensOverlay extends StatelessWidget {
                 : null,
             btnKey: child.key,
             useColumn: widget.direction.isLeft || widget.direction.isRight,
-            visible: child.visible,
+            // visible: child.visible,
             switchLabelPosition: widget.switchLabelPosition,
-            backgroundColor: child.backgroundColor,
-            foregroundColor: child.foregroundColor,
-            elevation: child.elevation,
+            // backgroundColor: child.backgroundColor,
+            // foregroundColor: child.foregroundColor,
+            // elevation: child.elevation,
             buttonSize: widget.childrenButtonSize,
-            label: child.label,
-            labelStyle: child.labelStyle,
-            labelBackgroundColor: child.labelBackgroundColor,
-            labelWidget: child.labelWidget,
-            labelShadow: child.labelShadow,
-            onTap: child.onTap,
-            onLongPress: child.onLongPress,
+            // label: child.label,
+            // labelStyle: child.labelStyle,
+            // labelBackgroundColor: child.labelBackgroundColor,
+            // labelWidget: child.labelWidget,
+            // labelShadow: child.labelShadow,
+            // onTap: child.onTap,
+            // onLongPress: child.onLongPress,
             toggleChildren: () {
               if (!widget.closeManually) toggleChildren();
             },
-            shape: child.shape,
+            // shape: child.shape,
             heroTag: widget.heroTag != null
                 ? '${widget.heroTag}-child-$index'
                 : null,
             childMargin: widget.childMargin,
             childPadding: widget.childPadding,
-            child: child.child,
+            child: child,
           );
         })
         .toList()

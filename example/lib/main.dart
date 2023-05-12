@@ -460,31 +460,36 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               : const StadiumBorder(),
           // childMargin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           children: [
-            SpeedDialChild(
-              child: !rmicons ? const Icon(Icons.accessibility) : null,
-              backgroundColor: Colors.red,
-              foregroundColor: Colors.white,
-              label: 'First',
-              onTap: () => setState(() => rmicons = !rmicons),
-              onLongPress: () => debugPrint('FIRST CHILD LONG PRESS'),
-            ),
-            SpeedDialChild(
-              child: !rmicons ? const Icon(Icons.brush) : null,
-              backgroundColor: Colors.deepOrange,
-              foregroundColor: Colors.white,
-              label: 'Second',
-              onTap: () => debugPrint('SECOND CHILD'),
-            ),
-            SpeedDialChild(
-              child: !rmicons ? const Icon(Icons.margin) : null,
-              backgroundColor: Colors.indigo,
-              foregroundColor: Colors.white,
-              label: 'Show Snackbar',
-              visible: true,
-              onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text(("Third Child Pressed")))),
-              onLongPress: () => debugPrint('THIRD CHILD LONG PRESS'),
-            ),
+            Container(
+              height: 50,
+              width: 100,
+              color: Colors.black,
+            )
+            // SpeedDialChild(
+            //   child: !rmicons ? const Icon(Icons.accessibility) : null,
+            //   backgroundColor: Colors.red,
+            //   foregroundColor: Colors.white,
+            //   label: 'First',
+            //   onTap: () => setState(() => rmicons = !rmicons),
+            //   onLongPress: () => debugPrint('FIRST CHILD LONG PRESS'),
+            // ),
+            // SpeedDialChild(
+            //   child: !rmicons ? const Icon(Icons.brush) : null,
+            //   backgroundColor: Colors.deepOrange,
+            //   foregroundColor: Colors.white,
+            //   label: 'Second',
+            //   onTap: () => debugPrint('SECOND CHILD'),
+            // ),
+            // SpeedDialChild(
+            //   child: !rmicons ? const Icon(Icons.margin) : null,
+            //   backgroundColor: Colors.indigo,
+            //   foregroundColor: Colors.white,
+            //   label: 'Show Snackbar',
+            //   visible: true,
+            //   onTap: () => ScaffoldMessenger.of(context).showSnackBar(
+            //       const SnackBar(content: Text(("Third Child Pressed")))),
+            //   onLongPress: () => debugPrint('THIRD CHILD LONG PRESS'),
+            // ),
           ],
         ),
         bottomNavigationBar: BottomAppBar(
